@@ -1,0 +1,418 @@
+/* ============================================================
+   WORKOPIA — CUSTOM STYLESHEET
+   Pangalan ng Student: ______________________________
+   Theme Name:          ______________________________
+   ============================================================ */
+
+/* --- Google Fonts Import ---
+   Pumunta sa https://fonts.google.com, pumili ng font,
+   i-copy ang @import link, i-paste dito.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* ----------------------------------------------------------------
+   SECTION 1: MGA KULAY (Colors)
+   ----------------------------------------------------------------
+   Palitan ang bawat hex code ng kulay na gusto mo.
+   Tip: https://coolors.co — para pumili ng color palette
+        https://htmlcolorcodes.com — para makita ang hex codes
+   ---------------------------------------------------------------- */
+
+:root {
+  --color-header:       #2e7d32;   /* Header at navigation bar */
+  --color-accent:       #43a047;   /* "Post a Job" button at mga highlight */
+  --color-accent-hover: #2e7d32;   /* Hover state ng accent */
+  --color-page-bg:      #f4f7f4;   /* Background ng buong page */
+  --color-card-bg:      #ffffff;   /* Background ng mga card/box */
+  --color-heading:      #1a2e1a;   /* Kulay ng mga title at heading */
+  --color-body-text:    #2d3d2d;   /* Regular na body text */
+  --color-link:         #2e7d32;   /* Mga clickable na links */
+  --color-link-hover:   #1b5e20;   /* Hover state ng links */
+  --color-tag-bg:       #c8e6c9;   /* Background ng mga tag/badge */
+  --color-tag-text:     #1b5e20;   /* Text ng mga tag/badge */
+  --color-footer:       #1a2e1a;   /* Footer background */
+  --color-footer-text:  #a5d6a7;   /* Footer text */
+  --color-border:       #c8e6c9;   /* Border ng mga element */
+  --showcase-overlay:   rgba(0, 0, 0, 0.35); /* Hero banner overlay */
+}
+
+
+/* ----------------------------------------------------------------
+   SECTION 2: MGA FONT (Typography)
+   ---------------------------------------------------------------- */
+
+:root {
+  --font-heading: 'Noto Serif', serif;
+  --font-body:    'Inter', sans-serif;
+}
+
+
+/* ----------------------------------------------------------------
+   SECTION 3: HUGIS AT ESTILO (Shape & Style)
+   ---------------------------------------------------------------- */
+
+:root {
+  --border-radius:      10px;
+  --card-shadow:        0 4px 16px rgba(46, 125, 50, 0.12);
+  --card-shadow-hover:  0 8px 28px rgba(46, 125, 50, 0.22);
+  --transition:         0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* ================================================================
+   BASE
+   ================================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body) !important;
+  background-color: var(--color-page-bg) !important;
+  color: var(--color-body-text) !important;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ================================================================
+   TYPOGRAPHY
+   ================================================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading) !important;
+  color: var(--color-heading) !important;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+p {
+  color: var(--color-body-text) !important;
+}
+
+/* ================================================================
+   LINKS
+   ================================================================ */
+
+a {
+  color: var(--color-link) !important;
+  transition: color var(--transition), opacity var(--transition);
+}
+
+a:hover {
+  color: var(--color-link-hover) !important;
+}
+
+/* Nav links stay white since they're on the dark header */
+header a,
+header nav a {
+  color: #ffffff !important;
+}
+
+header nav a:hover {
+  color: #c8e6c9 !important;
+}
+
+/* ================================================================
+   HEADER  — overrides bg-blue-900
+   ================================================================ */
+
+header,
+header.bg-blue-900 {
+  background-color: var(--color-header) !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* ================================================================
+   TOP BANNER — overrides bg-blue-900 on section
+   ================================================================ */
+
+section.bg-blue-900 {
+  background-color: var(--color-header) !important;
+}
+
+section.bg-blue-900 h2,
+section.bg-blue-900 p {
+  color: #ffffff !important;
+}
+
+/* ================================================================
+   BOTTOM BANNER — overrides bg-blue-800
+   ================================================================ */
+
+.bg-blue-800 {
+  background-color: var(--color-header) !important;
+  border-left: 5px solid var(--color-accent);
+  border-radius: var(--border-radius) !important;
+}
+
+.bg-blue-800 h2,
+.bg-blue-800 p {
+  color: #ffffff !important;
+}
+
+/* ================================================================
+   ACCENT BUTTON — overrides bg-yellow-500 / bg-blue-500
+   ================================================================ */
+
+.bg-yellow-500,
+.bg-blue-500,
+.bg-green-500 {
+  background-color: var(--color-accent) !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: background-color var(--transition),
+              box-shadow var(--transition),
+              transform var(--transition) !important;
+}
+
+.bg-yellow-500:hover,
+.hover\:bg-yellow-600:hover,
+.bg-blue-500:hover,
+.hover\:bg-blue-600:hover,
+.bg-green-500:hover,
+.hover\:bg-green-600:hover {
+  background-color: var(--color-accent-hover) !important;
+  box-shadow: 0 4px 16px rgba(46, 125, 50, 0.4) !important;
+  transform: translateY(-1px);
+}
+
+/* Cancel / Delete buttons keep their red color */
+.bg-red-500 {
+  background-color: #ef4444 !important;
+  color: #ffffff !important;
+}
+.hover\:bg-red-600:hover,
+.bg-red-500:hover {
+  background-color: #dc2626 !important;
+}
+
+/* ================================================================
+   PAGE BACKGROUND — overrides bg-gray-100
+   ================================================================ */
+
+.bg-gray-100,
+body.bg-gray-100 {
+  background-color: var(--color-page-bg) !important;
+}
+
+/* But bg-gray-100 INSIDE cards (job detail list) stays slightly grey */
+ul.bg-gray-100 {
+  background-color: #f0f5f0 !important;
+  border-radius: var(--border-radius) !important;
+}
+
+/* ================================================================
+   CARDS — overrides bg-white
+   ================================================================ */
+
+.bg-white {
+  background-color: var(--color-card-bg) !important;
+  border-radius: var(--border-radius) !important;
+  box-shadow: var(--card-shadow) !important;
+  border: 1px solid rgba(46, 125, 50, 0.12);
+  transition: box-shadow var(--transition),
+              transform var(--transition),
+              border-color var(--transition) !important;
+}
+
+.bg-white:hover {
+  box-shadow: var(--card-shadow-hover) !important;
+  transform: translateY(-3px);
+  border-color: rgba(67, 160, 71, 0.35);
+}
+
+/* ================================================================
+   TAGS / BADGES — overrides bg-indigo-100
+   ================================================================ */
+
+.bg-indigo-100 {
+  background-color: var(--color-tag-bg) !important;
+  border: 1px solid rgba(46, 125, 50, 0.25);
+  transition: background-color var(--transition) !important;
+}
+
+.bg-indigo-100:hover {
+  background-color: #a5d6a7 !important;
+}
+
+.text-indigo-700,
+.text-indigo-800 {
+  color: var(--color-tag-text) !important;
+  font-weight: 600;
+}
+
+/* Location badge (Local / Remote) overrides bg-blue-500 in spans */
+span.bg-blue-500 {
+  background-color: var(--color-accent) !important;
+  color: #ffffff !important;
+  transform: none !important;    /* don't lift tiny inline badges */
+  box-shadow: none !important;
+}
+
+/* ================================================================
+   TEXT COLOUR OVERRIDES
+   ================================================================ */
+
+.text-blue-700,
+.text-blue-500,
+.text-blue-900 {
+  color: var(--color-link) !important;
+}
+
+.text-gray-700,
+.text-gray-500,
+.text-gray-200 {
+  color: var(--color-body-text) !important;
+  opacity: 0.85;
+}
+
+/* ================================================================
+   BORDER RADIUS UTILITIES
+   ================================================================ */
+
+.rounded,
+.rounded-lg {
+  border-radius: var(--border-radius) !important;
+}
+
+.rounded-full {
+  border-radius: 9999px !important;
+}
+
+/* ================================================================
+   BUTTONS (general)
+   ================================================================ */
+
+button {
+  font-family: var(--font-body) !important;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: var(--border-radius) !important;
+  transition: background-color var(--transition),
+              box-shadow var(--transition),
+              transform var(--transition) !important;
+}
+
+button:active {
+  transform: translateY(0) scale(0.97) !important;
+}
+
+/* ================================================================
+   FORM INPUTS
+   ================================================================ */
+
+input,
+select,
+textarea {
+  font-family: var(--font-body) !important;
+  border: 1.5px solid var(--color-border) !important;
+  border-radius: var(--border-radius) !important;
+  transition: border-color var(--transition),
+              box-shadow var(--transition) !important;
+  outline: none !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--color-accent) !important;
+  box-shadow: 0 0 0 3px rgba(67, 160, 71, 0.18) !important;
+}
+
+/* ================================================================
+   SHOWCASE HERO OVERLAY
+   ================================================================ */
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--showcase-overlay) !important;
+}
+
+/* Showcase text stays white regardless of heading color variable */
+.showcase h2 {
+  color: #ffffff !important;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.35);
+}
+
+/* ================================================================
+   FOOTER
+   ================================================================ */
+
+footer,
+.bg-indigo-900 {
+  background-color: var(--color-footer) !important;
+  color: var(--color-footer-text) !important;
+  border-top: 3px solid var(--color-accent);
+}
+
+footer p {
+  color: var(--color-footer-text) !important;
+}
+
+footer a {
+  color: var(--color-accent) !important;
+}
+
+/* ================================================================
+   FADE-IN ANIMATION ON CARDS
+   ================================================================ */
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.grid .bg-white {
+  animation: fadeInUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+.grid .bg-white:nth-child(1) { animation-delay: 0.05s; }
+.grid .bg-white:nth-child(2) { animation-delay: 0.10s; }
+.grid .bg-white:nth-child(3) { animation-delay: 0.15s; }
+.grid .bg-white:nth-child(4) { animation-delay: 0.20s; }
+.grid .bg-white:nth-child(5) { animation-delay: 0.25s; }
+.grid .bg-white:nth-child(6) { animation-delay: 0.30s; }
+
+/* ================================================================
+   SCROLLBAR
+   ================================================================ */
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--color-page-bg); }
+::-webkit-scrollbar-thumb {
+  background: #a5d6a7;
+  border-radius: 9999px;
+  border: 2px solid var(--color-page-bg);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--color-accent); }
+
+/* ================================================================
+   SELECTION
+   ================================================================ */
+
+::selection {
+  background-color: rgba(67, 160, 71, 0.25);
+  color: var(--color-heading);
+}
+
+/* ================================================================
+   STATUS BADGES
+   ================================================================ */
+
+.bg-green-100 { background-color: #dcfce7 !important; }
+.text-green-800 { color: #166534 !important; font-weight: 600; }
+
+/* ================================================================
+   SECTION TITLE BORDER (Recent Jobs / All Jobs heading)
+   ================================================================ */
+
+.border.border-gray-300 {
+  border-color: var(--color-border) !important;
+  border-radius: var(--border-radius) !important;
+  background-color: var(--color-card-bg);
+  box-shadow: var(--card-shadow);
+}
