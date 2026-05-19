@@ -1,12 +1,12 @@
 <?php
     // Header
-    loadPartial('head');
+    loadPartials('head');
     // Navbar
-    loadPartial('navbar');
+    loadPartials('navbar');
     // Showcase
-    loadPartial('showcase');
+    loadPartials('showcase');
     // Top Banner
-    loadPartial('topBanner');
+    loadPartials('topbanner');
 ?>
 <!-- Job Listings -->
     <section>
@@ -200,7 +200,7 @@
      
 <?php
     // Bottom Banner
-    loadPartial('bottomBanner');
+    loadPartials('bottombanner');
     // Footer
-    loadPartial('footer');
+    loadPartials('footer');
 ?>

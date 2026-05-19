@@ -1,8 +1,8 @@
 <?php
     // Head
-    loadPartial('head');
+    loadPartials('head');
     // Navbar
-    loadPartial('navbar');
+    loadPartials('navbar');
 ?>
 
 <style>
@@ -258,7 +258,7 @@
   </div>
 </section>
 
-<?php loadPartial('footer'); ?>
+<?php loadPartials('footer'); ?>
 
 
 <!-- <?php

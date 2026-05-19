@@ -1,0 +1,17 @@
+{
+    "name": "juneecalacanilao/ws03-php",
+    "description": "Job Listing PHP Project",
+    "authors": [
+        {
+            "name": "Juneeca A. Lacanilao",
+            "email": "juneecalacanilao.neust@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Framework\\": "framework/",
+            "Framework\\Middleware\\": "framework/Middleware/",
+            "App\\": "app/"
+        }
+    }
+}

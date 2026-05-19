@@ -1,13 +1,19 @@
 <?php
-    define('BASE_PATH', realpath(__DIR__ . '/..'));
+    define('BASE_PATH', dirname(__DIR__));
+
+    require BASE_PATH . '/vendor/autoload.php';
     require BASE_PATH . '/helpers.php';
 
-    require basePath('router.php');
-    $routes = new Router();
-    require basePath('routes.php');
+    use Framework\Router;
+    use Framework\Session;
 
-    $uri = $_SERVER['REQUEST_URI']; // uniform resource identifier
+    Session::start();
+
+    $router = new Router();
+    $routes = require basePath('routes.php');
+
+    $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
     $method = $_SERVER['REQUEST_METHOD'];
 
-    $routes->route($uri, $method);
+    $router->route($uri, $method);
 ?>

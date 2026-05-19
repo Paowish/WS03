@@ -1,12 +1,26 @@
-<?php
-    // Header
-    loadPartial('head');
-    // Navbar
-    loadPartial('navbar');
-    // Top Banner
-    loadPartial('topBanner');
+<?php 
+if (!function_exists('loadPartials')) {
+    function loadPartials($partial) {
+        $path = __DIR__ . '/partials/' . $partial . '.php';
+        if (file_exists($path)) {
+            include $path;
+        }
+    }
+}
+
+loadPartials ('head');
+loadPartials ('navbar');
+loadPartials ('topbanner');
+loadPartials ('bottombanner');
+loadPartials ('footer');
+
 ?>
-<!-- Job Listings -->
+<!DOCTYPE html>
+<html lang="en">
+
+  <body class="bg-gray-100">
+   
+    <!-- Job Listings -->
     <section>
       <div class="container mx-auto p-4 mt-4">
         <div class="text-center text-3xl mb-4 font-bold border border-gray-300 p-3">Recent Jobs</div>
@@ -33,7 +47,7 @@
                   <span>Coding</span>
                 </li>
               </ul>
-              <a href="details"
+              <a href="details.html"
                 class="block w-full text-center px-5 py-2.5 shadow-sm rounded border text-base font-medium text-indigo-700 bg-indigo-100 hover:bg-indigo-200"
               >
                 Details
@@ -63,7 +77,7 @@
                   <span>Advertising</span>
                 </li>
               </ul>
-              <a href="details"
+              <a href="details.html"
                 class="block w-full text-center px-5 py-2.5 shadow-sm rounded border text-base font-medium text-indigo-700 bg-indigo-100 hover:bg-indigo-200"
               >
                 Details
@@ -93,7 +107,7 @@
                   <span>Programming</span>
                 </li>
               </ul>
-              <a href="details"
+              <a href="details.html"
                 class="block w-full text-center px-5 py-2.5 shadow-sm rounded border text-base font-medium text-indigo-700 bg-indigo-100 hover:bg-indigo-200"
               >
                 Details
@@ -123,7 +137,7 @@
                   <span>Statistics</span>
                 </li>
               </ul>
-              <a href="details"
+              <a href="details.html"
                 class="block w-full text-center px-5 py-2.5 shadow-sm rounded border text-base font-medium text-indigo-700 bg-indigo-100 hover:bg-indigo-200"
               >
                 Details
@@ -153,7 +167,7 @@
                   <span>Creative</span>
                 </li>
               </ul>
-              <a href="details"
+              <a href="details.html"
                 class="block w-full text-center px-5 py-2.5 shadow-sm rounded border text-base font-medium text-indigo-700 bg-indigo-100 hover:bg-indigo-200"
               >
                 Details
@@ -190,10 +204,9 @@
             </div>
           </div>
         </div>
+      </section>
+
      
-<?php
-    // Bottom Banner
-    loadPartial('bottomBanner');
-    // Footer
-    loadPartial('footer');
-?>
+     
+  </body>
+</html>
